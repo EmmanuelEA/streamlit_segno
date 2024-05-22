@@ -28,10 +28,23 @@ if st.button("Generar el código QR"):
     qr_code.save(buff, kind='svg', scale=scale_selected, dark=color)
     svg_data = buff.getvalue()
 
-    file_path = os.path.join(os.getcwd(), "qr_code.svg")
+    file_path = os.path.join(os.getcwd(), "eea_code.svg")
     with open(file_path, "wb") as f:
         f.write(svg_data)
 
     st.markdown(svg_data.decode(), unsafe_allow_html=True)
 
     st.write(f"Archivo guardado en: {file_path}")
+
+
+html_string = """
+<footer style="text-align: center; padding: 10px 0;">
+  <p>2024 EEA</p>
+</footer>
+"""
+
+#st.divider()
+st.html(html_string)
+leftc, centerc, rigthc = st.columns(3)
+with centerc:
+    st.image("./Emmanuel_linkedin.svg")
