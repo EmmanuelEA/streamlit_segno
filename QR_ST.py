@@ -34,7 +34,8 @@ if st.button("Generar el código QR"):
 
     st.markdown(svg_data.decode(), unsafe_allow_html=True)
 
-    st.write(f"Archivo guardado en: {file_path}")
+    #st.write(f"Archivo guardado en: {file_path}")
+    st.download_button(label="Descargar QR", data=buff.getvalue(), file_name="eea_code.png", mime="image/png")
 
 
 html_string = """
@@ -43,7 +44,7 @@ html_string = """
 </footer>
 """
 
-st.divider()
+#st.divider()
 st.html(html_string)
 leftc, centerc, rigthc = st.columns(3)
 with centerc:
