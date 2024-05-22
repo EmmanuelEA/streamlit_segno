@@ -43,7 +43,7 @@ html_string = """
 </footer>
 """
 
-#st.divider()
+st.divider()
 st.html(html_string)
 leftc, centerc, rigthc = st.columns(3)
 with centerc:
